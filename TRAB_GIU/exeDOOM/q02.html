@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ='utf-8'>
+    </head>
+    <body>
+        <p id='paragrafo'>123 <span>teste</span>123<span></span>loren<strong>negrito</strong><span>123 </span></p> 
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li id="item">333</li>
+            <li>444</li>
+            <li>555</li>
+            <li>666</li>
+            <li>777</li>
+            <li>888</li>
+        </ul>
+
+        <!-- questao 2.1 -->
+        <script>
+            const paragrafos = document.getElementById('paragrafo');
+            console.log(paragrafos.innerText);
+        </script>
+
+        <!-- questao 2.2 -->
+        <script>
+            const tags = document.getElementsByTagName('span')
+            for (let i = 0; i < tags.length; i++){
+                console.log(tags[i].innerText);
+            }
+        </script>
+
+        <!-- questao 2.3 -->
+        <script>
+            const liCapeta = document.getElementsByTagName('li');
+            for(let i = 0; i < liCapeta.length; i++){
+                if(liCapeta[i].innerText === '666'){
+                    console.log(liCapeta[i].innerText);
+                }
+            }
+        </script>
+
+        <!-- questao 2.4 -->
+        <script>
+            function exibirInnerHTML(elemento) {
+                console.log(elemento.innerHTML);
+                const pElement = document.querySelector('p');
+                const strongElement = document.querySelector('strong');
+                const liElement = document.getElementById('item');
+                console.log(pElement.innerHTML);
+                console.log(strongElement.innerHTML);
+                console.log(liElement.innerHTML);
+            }
+            const paragrafo = document.querySelector('p');
+            exibirInnerHTML(paragrafo);
+        </script>
+
+    </body>
+</html>

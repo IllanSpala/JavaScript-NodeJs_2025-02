@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Zebra</title>
+    <style>
+        .zebraon{background:silver}
+    </style>
+    </head>
+    <body>
+        <table class="zebra">
+            <thead><tr>
+            <th>Vendedor</th> <th>Total</th>
+            </tr></thead>
+            <tbody><tr>
+            <td>Manoel</td> <td>12.300,00</td>
+            </tr><tr>
+            <td>Joaquim</td> <td>21.300,00</td>
+            </tr><tr>
+            <td>Maria</td> <td>13.200,00</td>
+            </tr><tr>
+            <td>Marta</td> <td>32.100,00</td>
+            </tr><tr>
+            <td>Antonio</td> <td>23.100,00</td>
+            </tr><tr>
+            <td>Pedro</td> <td>31.200,00</td>
+            </tr></tbody>
+        </table>
+        <button onclick="mudaCor()">Muda cor</button>
+        
+    <script>
+        function mudaCor(){
+            //pegar a tabela
+            var tabela = document.querySelector(".zebra");
+            //pegar todas as linhas do corpo da tabela
+            var linhas = tabela.tBodies[0].rows;
+            //percorrer as linhas
+            for(var i=0; i<linhas.length; i++){
+                //verificar se o indice é par ou impar
+                if(i%2==0){
+                    //par
+                    linhas[i].classList.remove("zebraon");
+                } else {
+                    //impar
+                    linhas[i].classList.add("zebraon");
+                }
+            }
+        }   
+    </script>
+    </body>
+</html>

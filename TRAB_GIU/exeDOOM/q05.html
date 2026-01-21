@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- placeholder para as notas e depois somar as médias-->
+    <center>
+        <h2>Notas das Provas</h2>
+        <input id="nota1" type="number" min="0" max ="10" placeholder="Nota P1" style="margin: 3px;"> <br>
+        <input id="nota2" type="number" min="0" max ="10" placeholder="Nota P2" style="margin: 3px;"> <br>
+        <input id="nota3" type="number" min="0" max ="10" placeholder="Nota P3" style="margin: 3px;"> <br> 
+        <button onclick="somarNotas()">Somar Notas</button>
+        <button onclick ="medias()">Média das Notas</button>
+        <h3 id="resultadoFinal"> </h3>
+    </center>
+
+    <script>
+        function somarNotas() {
+            const nota1 = parseFloat(document.getElementById("nota1").value) || 0;
+            const nota2 = parseFloat(document.getElementById("nota2").value) || 0;
+            const nota3 = parseFloat(document.getElementById("nota3").value) || 0;
+            const resultadoFinal = document.getElementById("resultadoFinal");
+            const soma = nota1 + nota2 + nota3;
+            resultadoFinal.textContent = "Soma das Notas: " + soma;
+        }
+    </script>
+
+    <script>
+        function medias() {
+            const nota1 = parseFloat(document.getElementById("nota1").value) || 0;
+            const nota2 = parseFloat(document.getElementById("nota2").value) || 0;
+            const nota3 = parseFloat(document.getElementById("nota3").value) || 0;
+            const resultadoFinal = document.getElementById("resultadoFinal");
+            const media = (nota1 + nota2 + nota3) / 3;
+            resultadoFinal.textContent = "Média das Notas: " + media.toFixed(2);
+
+            if(media >= 7){
+                resultadoFinal.textContent += " - Aprovado";
+                resultadoFinal.style.color = "green";
+            }
+            else if(media >=5 && media <= 6.9){
+                resultadoFinal.textContent += " - Recuperação";
+                resultadoFinal.style.color = "orange";
+            }
+            else if(media < 5){
+                resultadoFinal.textContent += " - Reprovado";
+                resultadoFinal.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
